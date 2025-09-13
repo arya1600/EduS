@@ -3,7 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-
+// Route imports
 import authRoutes from "./routes/auth.routes.js";
 import courseRoutes from "./routes/course.routes.js";
 import instructorRoutes from "./routes/instructor.routes.js";
@@ -15,7 +15,7 @@ import { errorHandler, notFound } from "./middleware/error.js";
 
 dotenv.config();
 const app = express();
-
+// Default Middleware
 app.use(
   cors({
     origin: [process.env.CLIENT_ORIGIN, "http://localhost:5173"],

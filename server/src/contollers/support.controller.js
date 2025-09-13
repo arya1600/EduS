@@ -1,8 +1,10 @@
 import SupportTicket from "../models/SupportTicket.js";
-
+// user actions
+//create a support ticket
 export const createTicket = async (req, res, next) => {
   try {
     const { subject, message } = req.body;
+
     const t = await SupportTicket.create({
       user: req.user.id,
       subject,
@@ -13,7 +15,7 @@ export const createTicket = async (req, res, next) => {
     next(e);
   }
 };
-
+//get my tickets
 export const myTickets = async (req, res, next) => {
   try {
     const list = await SupportTicket.find({ user: req.user.id });
@@ -22,7 +24,8 @@ export const myTickets = async (req, res, next) => {
     next(e);
   }
 };
-
+//admin actions
+//list all tickets with optional status filter
 export const adminListTickets = async (req, res, next) => {
   try {
     const { status } = req.query; // get status filter from query
