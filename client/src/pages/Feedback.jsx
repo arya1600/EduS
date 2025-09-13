@@ -55,6 +55,7 @@ const FeedbackPage = () => {
 
   // ================= User Functions =================
   const fetchEnrolledCourses = async () => {
+    setLoading(true); // start loading
     try {
       const { data } = await axios.get(
         "http://localhost:8080/api/v1/enrollments/me",
@@ -63,9 +64,10 @@ const FeedbackPage = () => {
       setEnrolledCourses(data.map((e) => e.course));
     } catch (err) {
       console.error("Error fetching enrolled courses:", err);
+    } finally {
+      setLoading(false); // stop loading
     }
   };
-
   const handleSubmitFeedback = async (courseId) => {
     try {
       const message = courseMessage[courseId] || "";

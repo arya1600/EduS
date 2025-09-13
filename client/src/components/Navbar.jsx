@@ -68,25 +68,23 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-
-          {/* Desktop Profile Dropdown */}
+          <div className="hidden sm:flex gap-4 items-center ml-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="hover:text-gray-200 font-medium"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
           <div className="hidden sm:block">
             <ProfileDropdown user={user} onLogout={handleLogout} />
           </div>
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden sm:flex gap-4 items-center ml-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className="hover:text-gray-200 font-medium"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
       </div>
 
       {/* Mobile Slide-in Menu */}

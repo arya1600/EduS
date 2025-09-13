@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Courses = ({ user }) => {
   const [courses, setCourses] = useState([]);
+  // courses the user is enrolled in
   const [enrolledIds, setEnrolledIds] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -116,8 +117,8 @@ const Courses = ({ user }) => {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        <span className="text-[#B087CF]">Courses</span> Available
+      <h1 className="text-3xl font-bold text-center mb-6 text-[#B087CF]">
+        Courses Available
       </h1>
 
       <div className="flex flex-col md:flex-row gap-4 mb-6">

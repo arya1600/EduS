@@ -13,7 +13,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import EnrolledCourses from "./pages/EnrolledCourses";
 import Feedback from "./pages/Feedback";
 import Support from "./pages/Support";
-
+import ErrorPage from "./pages/Error";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import Footer from "./components/Footer";
@@ -98,11 +98,17 @@ function App() {
                     </AdminRoute>
                   }
                 />
+
+                {/* Catch-all for protected routes */}
+                <Route path="*" element={<ErrorPage />} />
               </Routes>
               <Footer />
             </>
           }
         />
+
+        {/* Catch-all for public routes */}
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );

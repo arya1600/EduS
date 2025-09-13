@@ -8,7 +8,7 @@ const AddCourse = ({ onClose }) => {
     category: "",
     rating: 0,
     image: "",
-    videoUrl: "", // ✅ Added videoUrl
+    videoUrl: "",
     instructor: "",
   });
   const [instructors, setInstructors] = useState([]);

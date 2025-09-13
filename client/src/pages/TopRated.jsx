@@ -28,7 +28,7 @@ const TopRated = () => {
     <div className="p-5 ">
       {/* Heading */}
       <h2 className="text-3xl font-bold mb-5 text-center text-[#B087CF]">
-        Top Rated<span className=" text-black px-3  rounded-lg">Courses</span>
+        Top Rated Courses
       </h2>
 
       {/* Courses Grid */}
